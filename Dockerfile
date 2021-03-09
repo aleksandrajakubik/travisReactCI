@@ -1,7 +1,6 @@
 FROM node:alpine AS builder
 WORKDIR /opt/app
-ENV PATH opt/app/node_modules/.bin:$PATH
-COPY ./package.json ./
+COPY ./package*.json ./
 RUN yarn install
 COPY ./ ./
 RUN yarn build
